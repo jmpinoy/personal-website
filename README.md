@@ -1,7 +1,7 @@
 # personal-website
 My Personal Website and Portfolio
 
-# Front end techstack
+# Front End Techstack
 Vue3
 Typescript
 JSX
