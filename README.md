@@ -1,5 +1,5 @@
 # personal-website
-My Personal Website and Portfolio
+My Portfolio Website build from scratch with:
 
 # Front End Techstack
 * Vue3
