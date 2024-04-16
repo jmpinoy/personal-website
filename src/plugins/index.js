@@ -1,7 +1,7 @@
 import router from '../router'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
-import Lara from '@/presets/lara';
+import Wind from '@/presets/wind';
 
 // PrimeVue Components
 import Button from 'primevue/button';
@@ -18,7 +18,7 @@ export function registerPlugins (app) {
       .use(pinia)
       .use(PrimeVue, {
         unstyled: true,
-        pt: Lara
+        pt: Wind
       })
       .use(ToastService)
 
