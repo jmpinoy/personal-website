@@ -1,7 +1,14 @@
+<script setup lang="ts">
+import HelloWorld_PV from '@/components/HelloWorld_PV.vue';
+</script>
+
 <template>
-  <div class="about">
+  <main>
+    <HelloWorld_PV />
+  </main>
+  <!-- <div class="about">
     <h1>This is an about page</h1>
-  </div>
+  </div> -->
 </template>
 
 <style>
