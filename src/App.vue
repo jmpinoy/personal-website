@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView, useRouter } from 'vue-router'
+
+const router = useRouter()
+
+function scrollTo(section: string) {
+  router.push(section);
+}
 </script>
 
 <template>
@@ -7,13 +13,12 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <IntroComponent />
       <nav>
-        <RouterLink to="/">About</RouterLink>
-        <RouterLink to="/about">Experience</RouterLink>
-        <RouterLink to="/about">Projects</RouterLink>
+        <a @click="scrollTo('#about')">About</a>
+        <a @click="scrollTo('#experience')">Experience</a>
+        <a @click="scrollTo('#projects')">Projects</a>
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
@@ -55,6 +60,8 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
+    position: sticky;
+    top: 0;
     /* padding-right: calc(var(--section-gap) / 2); */
   }
 
@@ -72,6 +79,10 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -7px;
     font-size: 1rem;
+  }
+
+  nav {
+    cursor: pointer;
   }
 }
 </style>
