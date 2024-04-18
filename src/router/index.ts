@@ -1,20 +1,35 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to, from, savedPosition) {
-    if (to.hash) {
-      return { 
-        el: to.hash, behavior: 'smooth'
-      }
-    }
-  },
+  // scrollBehavior(to) {
+  //   if (to.hash) {
+  //     return { 
+  //       el: to.hash, behavior: 'smooth',
+  //       top: 60
+  //     }
+  //   }
+  // },
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'landing',
+      component: () => import('@/views/LandingView.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('@/views/AboutMeView.vue')
+    },
+    {
+      path: '/experience',
+      name: 'experience',
+      component: () => import('@/views/ExperienceView.vue')
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: () => import('@/views/ProjectsView.vue')
     },
   ]
 })

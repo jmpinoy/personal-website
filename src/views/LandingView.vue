@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import HelloWorld_PV from '@/components/HelloWorld_PV.vue';
+import TheWelcome from '@/components/TheWelcome.vue';
 </script>
 
 <template>
   <main>
-    <HelloWorld_PV />
+    <TheWelcome />
   </main>
   <!-- <div class="about">
     <h1>This is an about page</h1>
@@ -12,7 +12,7 @@ import HelloWorld_PV from '@/components/HelloWorld_PV.vue';
 </template>
 
 <style>
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .about {
     min-height: 100vh;
     display: flex;

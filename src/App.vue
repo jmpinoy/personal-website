@@ -1,11 +1,4 @@
 <script setup lang="ts">
-import { RouterView, useRouter } from 'vue-router'
-
-const router = useRouter()
-
-function scrollTo(section: string) {
-  router.push(section);
-}
 </script>
 
 <template>
@@ -13,13 +6,17 @@ function scrollTo(section: string) {
     <div class="wrapper">
       <IntroComponent />
       <nav>
-        <a @click="scrollTo('#about')">About</a>
-        <a @click="scrollTo('#experience')">Experience</a>
-        <a @click="scrollTo('#projects')">Projects</a>
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/experience">Experience</RouterLink>
+        <RouterLink to="/projects">Projects</RouterLink>
       </nav>
     </div>
   </header>
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <Transition name="fade" mode="out-in">
+      <component :is="Component" :key="Component"></component>
+    </Transition>
+  </RouterView>
 </template>
 
 <style scoped>
@@ -56,17 +53,32 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+/* route transitions */
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+
+.fade-leave-active {
+  transition: all 0.3s ease-in;
+}
+
+@media (min-width: 1025px) {
   header {
     display: flex;
     place-items: center;
     position: sticky;
     top: 0;
     /* padding-right: calc(var(--section-gap) / 2); */
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
   }
 
   header .wrapper {
@@ -83,6 +95,10 @@ nav a:first-of-type {
 
   nav {
     cursor: pointer;
+  }
+
+  .logo {
+    margin: 0 2rem 0 0;
   }
 }
 </style>
