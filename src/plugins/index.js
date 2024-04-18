@@ -3,13 +3,10 @@ import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
 import Wind from '@/presets/wind';
 
-// PrimeVue Components
-import Button from 'primevue/button';
-import Toast from 'primevue/toast';
-import ToastService from 'primevue/toastservice';
-
 // PrimeVue Assets
 import 'primeicons/primeicons.css';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
 
 export function registerPlugins (app) {
     const pinia = createPinia()
@@ -21,8 +18,5 @@ export function registerPlugins (app) {
         pt: Wind
       })
       .use(ToastService)
-
-      // PrimeVuew Components
-      .component('Button', Button)
       .component('Toast', Toast)
   }
