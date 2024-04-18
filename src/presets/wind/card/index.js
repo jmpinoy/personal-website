@@ -25,7 +25,7 @@ export default {
             'mb-1 px-5 md:px-6',
 
             //Color
-            'text-surface-600 dark:text-surface-0/60'
+            // 'text-surface-600 dark:text-surface-0/60'
         ]
     },
     content: {
