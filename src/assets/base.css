@@ -92,6 +92,11 @@
   }
 }
 
+@font-face {
+  font-family: "Garet";
+  src: url('@/assets/fonts/Garet-Book.ttf');
+}
+
 *,
 *::before,
 *::after {

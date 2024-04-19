@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 </script>
 
 <template>
@@ -10,6 +11,7 @@
         <RouterLink to="/experience">Experience</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
       </nav>
+      <SocialsComponent />
     </div>
   </header>
   <RouterView v-slot="{ Component }">
