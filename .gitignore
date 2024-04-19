@@ -29,3 +29,4 @@ coverage
 
 *.tsbuildinfo
 yarn.lock
+components.d.ts
