@@ -23,7 +23,7 @@ export default {
             { 'rounded-none first:rounded-l-md last:rounded-r-md self-center': parent.instance.$name == 'InputGroup' },
 
             // Link Button
-            { 'text-black bg-transparent ring-transparent': props.link },
+            { 'text-gray-800 bg-transparent ring-transparent': props.link },
 
             // Plain Button
             { 'text-white bg-gray-500 ring-1 ring-gray-500': props.plain && !props.outlined && !props.text },
@@ -122,7 +122,7 @@ export default {
             { 'focus:ring-offset-2': !props.link && !props.plain && !props.outlined && !props.text },
 
             // Link
-            { 'focus:ring-black dark:focus:ring-black': props.link },
+            { 'focus:ring-black dark:focus:ring-surface-950': props.link },
 
             // Plain
             { 'hover:bg-gray-600 hover:ring-gray-600': props.plain && !props.outlined && !props.text },

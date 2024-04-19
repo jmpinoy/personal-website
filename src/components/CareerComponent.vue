@@ -1,8 +1,17 @@
 <template>
   <div class="wrap">
     <Card class="introcard" pt:title:style="font-size: 20px; font-weight: 200">
-      <template #title>{{ job.jobTitle }}, {{ job.company }}</template>
-      <template #subtitle>{{ job.date }}</template>
+      <template #title>        
+        {{ job.jobTitle }}
+      </template>
+      <template #subtitle>
+        <a :href="`https://www.${job.url}`" target="_blank">
+          @ {{ job.company }}
+          <i class="pi pi-arrow-up-right" />
+        </a>
+        <br>
+        {{ job.date }}
+      </template>
       <template #content>
         <ul>
           <li v-for="bullet in job.bullets" :key="bullet">

@@ -4,9 +4,11 @@
       <CareerComponent :job="job1" />
       <CareerComponent :job="job2" />
     </div>
-    <Button link @click="downloadResume">
-      View Full Résumé
-    </Button>
+    <div style="text-align: right; float: right;">
+      <a @click="downloadResume" class="px-2" style="cursor: pointer;">
+        View Full Résumé
+      </a>
+    </div>
   </main>
 </template>
 
@@ -20,6 +22,7 @@ function downloadResume() {
 // Will put in db for api
 const job1 = {
   jobTitle: "DevSecOps Software Engineer",
+  url: "ssandtech.com",
   company: "Spiral Solutions and Technologies Inc.",
   date: "2020-Present",
   bullets: [

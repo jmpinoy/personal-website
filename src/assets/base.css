@@ -5,9 +5,9 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   /* my theme */
-  --jcm-white: #e6e6e6;
-  --jcm-black: #000000;
-  --jcm-black-soft: #2e2e2e;
+  --vt-c-jcm-white: #e6e6e6;
+  --vt-c-jcm-black: #000000;
+  --vt-c-jcm-black-soft: #2e2e2e;
 
   /* default theme */
   --vt-c-white: #ffffff;
@@ -69,13 +69,13 @@
   --surface-700: 45 55 72;
   --surface-800: 30 41 59;
   --surface-900: 15 23 42;
-  --surface-950: 3 6 23;
+  --surface-950: 46 46 46;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     /* my theme */    
-    --color-background: var(--jcm-white);
+    --color-background: var(--vt-c-jcm-white);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
 
@@ -87,8 +87,8 @@
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
 
-    --color-heading: var(--jcm-black);
-    --color-text: var(--jcm-black-soft);
+    --color-heading: var(--vt-c-jcm-black);
+    --color-text: var(--vt-c-jcm-black-soft);
   }
 }
 
