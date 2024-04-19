@@ -5,33 +5,12 @@ const aboutme = "I’ve always been into technology ever since I was young. Tear
 </script>
 
 <template>
-  <main>
-    <div class="wrapper">
-      <div id="about">
-        <AboutMe :msg="aboutme" />
-      </div>
+  <main style="margin-top: 100px; margin-bottom: 100px;">
+    <div id="about">
+      <AboutMe :msg="aboutme" />
     </div>
   </main>
 </template>
 
 <style scoped>
-  main {
-    line-height: 1.5;
-    max-height: 100vh;
-  }
-
-  @media (min-width: 1025px) {
-    main {
-      display: flex;
-      place-items: center;
-      position: sticky;
-      top: 0;
-    }
-  
-    main .wrapper {
-      display: flex;
-      place-items: flex-start;
-      flex-wrap: wrap;
-    }
-  }
 </style>

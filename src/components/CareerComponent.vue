@@ -1,41 +1,44 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <div class="wrap">
+    <Card class="introcard" pt:title:style="font-size: 20px; font-weight: 200">
+      <template #title>{{ job.jobTitle }}, {{ job.company }}</template>
+      <template #subtitle>{{ job.date }}</template>
+      <template #content>
+        <ul>
+          <li v-for="bullet in job.bullets" :key="bullet">
+            {{ bullet }}
+          </li>
+        </ul>
+        <div style="margin-top: 20px; margin-left: -8px;">
+          <Chip v-for="tech in job.technologies" :key="tech">
+            {{ tech }}
+          </Chip>
+        </div>
+      </template>
+    </Card>
   </div>
 </template>
 
+<script setup lang="ts">
+  // need to fix property does not exist typescript error
+  defineProps<{
+    job: Object
+  }>()
+</script>
+
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
+.introcard {
+  background-color: var(--color-background);
+  color: var(--vt-c-jcm-black);
+  box-shadow: none;
 }
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
+li {
+  list-style-type: circle;
+  margin-left: 18px;
+  list-style-position: inline;
 }
 
 @media (min-width: 1025px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
 }
 </style>

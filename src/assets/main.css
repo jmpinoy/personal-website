@@ -8,8 +8,7 @@
   font-family: Garet;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: var(--color-text);
   transition: 0.4s;
