@@ -1,15 +1,14 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
+  max-width: 1380px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
   font-family: Garet;
 }
 
-a,
-.green {
+a {
   text-decoration: none;
   color: var(--color-text);
   transition: 0.4s;
@@ -23,7 +22,7 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   body {
     display: flex;
     place-items: center;

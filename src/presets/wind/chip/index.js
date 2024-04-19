@@ -9,10 +9,6 @@ export default {
 
             // Shape
             'rounded-[1.14rem]',
-
-            // Colors
-            'text-surface-700 dark:text-surface-0/70',
-            'bg-surface-200 dark:bg-surface-700'
         ]
     },
     label: {

@@ -7,10 +7,11 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    AboutMe: typeof import('./src/components/AboutMe.vue')['default']
+    AboutMeComponent: typeof import('./src/components/AboutMeComponent.vue')['default']
     Button: typeof import('primevue/button')['default']
     Card: typeof import('primevue/card')['default']
     CareerComponent: typeof import('./src/components/CareerComponent.vue')['default']
+    Chip: typeof import('primevue/chip')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HelloWorld_PV: typeof import('./src/components/HelloWorld_PV.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
