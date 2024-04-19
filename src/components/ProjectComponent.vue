@@ -30,11 +30,9 @@ import { filename } from 'pathe/utils'
   }>()
 
   const glob = import.meta.glob('@/assets/images/*.png', { eager: true })
-  console.log(glob);
   const images = Object.fromEntries(
     Object.entries(glob).map(([key, value]) => [filename(key), value.default])
   )
-  console.log(images);
 </script>
 
 <style scoped>
