@@ -1,41 +1,53 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
-</script>
-
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <div class="wrap">    
+    <img :src="images[`${project.image}`]" width="175" />
+    <Card class="introcard" pt:title:style="font-size: 20px; font-weight: 200">
+      <template #title>
+        <a :href="`https://www.${project.url}`" target="_blank">
+          {{ project.url }}
+          <i class="pi pi-arrow-up-right" />
+        </a>
+      </template>
+      <template #content>
+        <p>
+          {{ project.description }}
+        </p>
+        <div style="margin-top: 20px; margin-left: -8px;">
+          <Chip v-for="tech in project.technologies" :key="tech">
+            {{ tech }}
+          </Chip>
+        </div>
+      </template>
+    </Card>
   </div>
 </template>
 
+<script setup lang="ts">
+import { filename } from 'pathe/utils'
+  // need to fix property does not exist typescript error
+  defineProps<{
+    project: Object
+  }>()
+
+  const glob = import.meta.glob('@/assets/images/*.png', { eager: true })
+  console.log(glob);
+  const images = Object.fromEntries(
+    Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+  )
+  console.log(images);
+</script>
+
 <style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
+.introcard {
+  background-color: var(--color-background);
+  color: var(--vt-c-jcm-black);
+  box-shadow: none;
 }
 
 @media (min-width: 1025px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
+  .wrap {
+    display: flex;
+    place-items: center;
   }
 }
 </style>
