@@ -31,7 +31,7 @@
 <script setup lang="ts">
   // need to fix property does not exist typescript error
   defineProps<{
-    job: Object
+    job: any
   }>()
 </script>
 
