@@ -3,7 +3,7 @@
     <img :src="images[`${project.image}`]" width="175" />
     <Card class="introcard" pt:title:style="font-size: 20px; font-weight: 200">
       <template #title>
-        <a :href="`https://www.${project.url}`" target="_blank">
+        <a :href="`https://${project.url}`" target="_blank">
           {{ project.url }}
           <i class="pi pi-arrow-up-right" />
         </a>
@@ -26,7 +26,7 @@
 import { filename } from 'pathe/utils'
   // need to fix property does not exist typescript error
   defineProps<{
-    project: Object
+    project: any
   }>()
 
   const glob = import.meta.glob('@/assets/images/*.png', { eager: true })

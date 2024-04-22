@@ -45,6 +45,7 @@ const job1 = {
 
 const job2 = {
   jobTitle: "Part-time DevSecOps Software Engineer",
+  url: "ssandtech.com",
   company: "Spiral Solutions and Technologies Inc.",
   date: "2018-2020",
   bullets: [
